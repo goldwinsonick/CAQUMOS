@@ -12,42 +12,50 @@
             <div id="title-1">CAQUMOS</div>
             <div id="title-2">City Air Quality Monitoring System</div>
         </div>
-        <div id="sensor-grid">
-            <div class="sensor-row">
-                <div class="sensor-col sensor-no">No</div>
-                <div class="sensor-col sensor-lokasi">Lokasi</div>
-                <div class="sensor-col sensor-temp">Suhu</div>
-                <div class="sensor-col sensor-humi">Humidity</div>
-                <div class="sensor-col sensor-CO">CO</div>
-                <div class="sensor-col sensor-CO2">CO2</div>
-                <div class="sensor-col sensor-NH4">NH4</div>
+        <div id="sensor-container">
+            <div class="sensor-lokasi">Campus Center Timur</div>
+            <div class="sensor-flex">
+                <div class="sensor-box sensor-temp">
+                    <div class="sensor-title">Suhu</div>
+                    <div class="sensor-value" id="temp-display"></div>
+                    <div class="sensor-unit">&#176Celcius</div>
+                </div>
+                <div class="sensor-box sensor-humi">
+                    <div class="sensor-title">Kelembapan</div>
+                    <div class="sensor-value" id="humi-display"></div>
+                    <div class="sensor-unit">%</div>
+                </div>
+                <div class="sensor-box sensor-pm25">
+                    <div class="sensor-title">PM 2.5</div>
+                    <div class="sensor-value" id="pm25-display"></div>
+                    <div class="sensor-unit">&#181g/m<sup>3</sup></div>
+                </div>
             </div>
-            <div class="sensor-row">
-                <div class="sensor-col sensor-no"></div>
-                <div class="sensor-col sensor-lokasi"></div>
-                <div class="sensor-col sensor-temp"></div>
-                <div class="sensor-col sensor-humi"></div>
-                <div class="sensor-col sensor-CO"></div>
-                <div class="sensor-col sensor-CO2"></div>
-                <div class="sensor-col sensor-NH4"></div>
+            <div class="sensor-flex">
+                <div class="sensor-box sensor-CO">
+                    <div class="sensor-title">CO</div>
+                    <div class="sensor-value" id="CO-display"></div>
+                    <div class="sensor-unit">ppm</div>
+                </div>
+                <div class="sensor-box sensor-CO2">
+                    <div class="sensor-title">CO2</div>
+                    <div class="sensor-value" id="CO2-display"></div>
+                    <div class="sensor-unit">ppm</div>
+                </div>
+                <div class="sensor-box sensor-NH4">
+                    <div class="sensor-title">NH4</div>
+                    <div class="sensor-value" id="NH4-display"></div>
+                    <div class="sensor-unit">ppm</div>
+                </div>
             </div>
-            <div class="sensor-row">
-                <div class="sensor-col sensor-no"></div>
-                <div class="sensor-col sensor-lokasi"></div>
-                <div class="sensor-col sensor-temp"></div>
-                <div class="sensor-col sensor-humi"></div>
-                <div class="sensor-col sensor-CO"></div>
-                <div class="sensor-col sensor-CO2"></div>
-                <div class="sensor-col sensor-NH4"></div>
+
+            <div class="summary-container">
+                <div class="summary-title">Status:</div>
+                <div id="summary-status">Baik</div>
             </div>
         </div>
 
 
-        <!-- <div>
-            Temperature: <span id="temperature-display"></span>
-            <br/>
-            Humidity: <span id="humidity-display"></span>
-        </div> -->
         <script type="module" src="index.js"></script>
     </body>
 </html>
