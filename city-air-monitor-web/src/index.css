@@ -1,0 +1,68 @@
+html{
+    width:100%;
+    height:100%;
+}
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    background:#F6F4EB;
+    font-family:"Montserrat";
+}
+#title-bar{
+    text-align:center;
+    font-size:3vw;
+}
+#title-1{
+    font-weight:900;
+}
+#title-1{
+    font-weight:700;
+}
+#sensor-grid{
+    display:flex;
+    margin:auto;
+    flex-direction:column;
+    background:#91C8E4;
+    width:95%;
+    height:50%;
+    margin-top:5%;
+    border-radius:25px;
+}
+.sensor-row{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    width:100%;
+    height:50px;
+    border-bottom:1px solid black;
+    border-color:rgba(0, 0, 0, 0.5);
+}
+.sensor-col{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    vertical-align:middle;
+}
+.sensor-no{
+    background:rgb(200,200,200);
+}
+.sensor-lokasi{
+    background:rgb(255, 255, 255);
+}
+.sensor-temp{
+    background:rgb(200,200,255);
+}
+.sensor-humi{
+    background:rgb(200,255,200)
+}
+.sensor-CO{
+    background:rgb(255,200,200)
+}
+.sensor-CO2{
+    background:rgb(200,255,255)
+}
+.sensor-NH4{
+    background:rgb(255,255,200)
+}
