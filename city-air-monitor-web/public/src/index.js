@@ -16,6 +16,24 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+const summaryDisplay = document.querySelector("#summary-status");
+function updateStatus(AQI){
+    // Good, moderate, unhealty, very unhealthy, hazardous
+    if(0<=AQI && AQI<=12){
+        summaryDisplay.innerHTML = "AQI 0-50 : Good";
+    }else if(12<AQI && AQI<=35.4){
+        summaryDisplay.innerHTML = "AQI 51-100 : Moderate";
+    }else if(35.4<AQI && AQI<=56.4){
+        summaryDisplay.innerHTML = "AQI 101-150 : Unhealthy for Sensitive Group";
+    }else if(56.4<AQI && AQI<=150.4){
+        summaryDisplay.innerHTML = "AQI 151-200 : Unhealthy";
+    }else if(150.4<AQI && AQI<=250.4){
+        summaryDisplay.innerHTML = "AQI 201-300 : Very Unhealthy";
+    }else{
+        summaryDisplay.innerHTML = "AQI 301+ : Hazardous"
+    }
+}
+
 // Read from Realtime Database and update the values
 let tempVal = "";
 let humiVal = "";
@@ -32,10 +50,12 @@ const NH4Display = document.querySelector("#NH4-display");
 function updateValues(){
   tempDisplay.innerHTML = tempVal;
   humiDisplay.innerHTML = humiVal;
-  pm25Display.innerHTML = pm25Val;
-  CODisplay.innerHTML = COVal;
-  CO2Display.innerHTML = CO2Val;
+  pm25Display.innerHTML = (pm25Val/40).toFixed(3);
+  CODisplay.innerHTML = CO2Val;
+  CO2Display.innerHTML = COVal;
   NH4Display.innerHTML = NH4Val;
+
+  updateStatus(pm25Val/40);
 }
 const tempRef = ref(database, 'Sensor/temperature');
 const humiRef = ref(database, 'Sensor/humidity');

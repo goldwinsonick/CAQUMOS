@@ -16,8 +16,8 @@
 
 // Configs
 // --- WIFI ---
-#define WIFI_SSID "eduroam kentang"
-#define WIFI_PASSWORD "potatopotato"
+#define WIFI_SSID "CAQUMOS"
+#define WIFI_PASSWORD "CAQUMOS123"
 #define API_KEY "AIzaSyAnVjkhiPUXtsexWzpWUVxANJGxaIilqTI"
 #define DATABASE_URL "https://city-air-quality-monitor-default-rtdb.asia-southeast1.firebasedatabase.app/"
 FirebaseData fbdo; // Firebase Data Object
@@ -106,6 +106,7 @@ void loop() {
   // Chris Nafis (c) 2012
   dustDensity = 170 * calcVoltage - 0.1;
   Serial.print("Dust: ");
+  
   Serial.println(dustDensity); // unit: ug/m3
 
   // DHT11
